@@ -1,9 +1,12 @@
 {
   "pages": [
-    "pages/infoprofession/infoprofession",
     "pages/index/index",
+    "pages/infoprofession/infoprofession",
+    "pages/infohouse/infohouse",
+    "pages/infocar/infocar",
+    "pages/infoinsurance/infoinsurance",
+   
     "pages/logs/logs"
-    
   ],
   "window": {
     "backgroundTextStyle": "light",

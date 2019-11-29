@@ -2,44 +2,39 @@ var sliderWidth = 96; // 需要设置slider的宽度，用于计算中间位置
 
 Page({
   data: {
-    tabs: ["上班族", "企业主", "个体户", "其他"],
-    activeIndex: 0,  //当前选中的tab
+    tabs: ["有", "无"],
+    activeIndex: 0,
     sliderOffset: 0,
     sliderLeft: 0,
-    
-    array1: ["5000￥以下", "5000-10000￥", "10000-20000￥", "20000￥以上"],  //收入等级
-    array2: ["有", "无"],  //社保状态
-    array3: ["有", "无"],  //公积金状态
-    index1: -1,   
-    index2: -1,
-    index3: -1,
 
-    basicArray: [3,5,3,2],  //每种身份初始金额
-    increaseArray1:[1,2,5,10],  //每种收入增加金额
-    increaseArray2:[2,0],  //有社保增加金额
-    increaseArray3:[2,0],  //有公积金增加金额
-   
+    array1: ["按揭车", "全款车"],  
+    index1: -1, 
+    worthTotal: "",
+    monthlyPay: "",
+
+    initTotal: 0,  //初始金额
+
     total: 0,  //计算出的总金额
     value2: 0,  //千位
     value3: 0,  //百位
     value4: 0,  //十位
-    value5: 0,  //个位   
+    value5: 0,  //个位 
 
     showDialog: false
   },
   /*计算可贷款总金额 */
   calTotalMoney: function () {
-     var money = this.data.basicArray[this.data.activeIndex];   
-     if(this.data.index1 >= 0){
-       money += this.data.increaseArray1[this.data.index1] * 1
-     }
-     if(this.data.index2 >= 0){
-       money += this.data.increaseArray2[this.data.index2] * 1
-     }
-     if(this.data.index3 >= 0){
-       money += this.data.increaseArray3[this.data.index3] * 1
-     }
-     return money
+    var money = this.data.initTotal * 1
+    if(this.data.activeIndex == 0){
+      if (this.data.index1 == 0 && this.data.monthlyPay != "") {  //按揭房
+        money += 30 * this.data.monthlyPay / 1e4
+      } else if (this.data.index1 == 1 && this.data.worthTotal != "") {
+        money += .7 * this.data.worthTotal;
+      } else {
+
+      }
+    }
+    return money
   },
   /*显示顶部的总金额数字 */
   showMoney: function () {
@@ -48,7 +43,7 @@ Page({
       value2: 0,
       value3: 0,
       value4: 0,
-      value5: this.data.total
+      value5: t
     }) : 2 === t.length ? this.setData({
       value2: 0,
       value3: 0,
@@ -65,25 +60,27 @@ Page({
       value4: t[2],
       value5: t[3]
     })
-    console.log(this.data.value5)
   },
-  
-  calAndShowMoney: function(){
+
+  calAndShowMoney: function () {
     var totalMoney = this.calTotalMoney()
     this.setData({
       total: totalMoney
     })
     this.showMoney()
   },
-  clearInputs: function(){
+  clearInputs: function () {
     this.setData({
       index1: -1,
-      index2: -1,
-      index3: -1,
-      total: 0
+      total: 0,
+      worthTotal: "",
+      monthlyPay: ""
     })
   },
-  onLoad: function () {
+  onLoad: function (options) {
+    this.setData({
+      initTotal: options.total
+    })
     var that = this;
     wx.getSystemInfo({
       success: function (res) {
@@ -95,7 +92,7 @@ Page({
     });
     this.calAndShowMoney()
   },
-  tabClick: function (e) {   
+  tabClick: function (e) {
     this.setData({
       sliderOffset: e.currentTarget.offsetLeft,
       activeIndex: e.currentTarget.id
@@ -109,15 +106,32 @@ Page({
     })
     this.calAndShowMoney()
   },
-  bindArray2Change: function (e) { 
+  bindWorthTotalInput: function (t) {
+    if (t.detail.value > 1e3) {
+      wx.showToast({
+        title: "车产价值额度不允许超过1000万",
+        icon: "none",
+        duration: 1e3
+      });
+      return 1e3
+    }
+
     this.setData({
-      index2: e.detail.value
+      worthTotal: t.detail.value
     })
     this.calAndShowMoney()
   },
-  bindArray3Change: function (e) {
+  bindMoneyPayInput: function (t) {
+    if (t.detail.value > 5e4) {
+      wx.showToast({
+        title: "月供金额不允许超过5万",
+        icon: "none",
+        duration: 1e3
+      });
+      return 5e4
+    }
     this.setData({
-      index3: e.detail.value
+      monthlyPay: t.detail.value
     })
     this.calAndShowMoney()
   },
@@ -128,37 +142,27 @@ Page({
       content: '请完善信息',
       confirmText: "确定",
       cancelText: "取消",
-      success: function (res) {        
+      success: function (res) {
       }
     });
   },
-  /* 点击下一步操作 */
-  onBtnClick: function(e){
-    if (this.data.activeIndex == 0 || this.data.activeIndex == 2 || this.data.activeIndex == 3)
-      {
-        if(this.data.index1 < 0 || this.data.index2 < 0 || this.data.index3 < 0){
-          this.openConfirm()
-        }else{
-          this.navagateToHoseInfo()
-        }
-      }
-      else{
-        if (this.data.index1 < 0) {
+  onBtnClick: function (e) {
+    switch (this.data.activeIndex) {
+      case 0:
+        if (this.data.index1 < 0 || this.data.index2 < 0 
+        || (this.data.index2 === 1 && this.data.monthlyPay === "") || (this.data.index2 === 2 && this.data.worthTotal === "")) {
           this.openConfirm()
         } else {
-          this.navagateToHoseInfo()
+          wx.navigateTo({
+            url: '../infoinsurance/infoinsurance?total='+this.data.total,
+          })
         }
-     }    
-  },
-  closeDialog: function () {
-    this.setData({
-      istrue: false
-    })
-  },
-  navagateToHoseInfo: function(){
-    wx.navigateTo({
-      url: '../infohouse/infohouse?total='+this.data.total
-    })
-  },
-  
+        break
+      default:
+        wx.navigateTo({
+          url: '../infoinsurance/infoinsurance?total='+this.data.total,
+        })
+        break
+    }
+  }
 });
