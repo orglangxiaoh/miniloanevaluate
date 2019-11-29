@@ -1,0 +1,14 @@
+<view class="top">
+    <view class="header"></view>
+    <image class="avatar" src="/img/image.png"></image>
+    <button type="primary" bindtap="clickTest">测一测</button>
+    <view class="title">贷款方案查询</view>
+    <view class="box">
+        <view>
+            <text class="round"></text> 咨询服务免费申请   贷款方案量身定制
+    </view>
+
+    </view>
+    <view>
+    </view>
+</view>

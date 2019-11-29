@@ -1,0 +1,61 @@
+page,
+.page,
+.page__bd{
+    height: 100%;
+}
+.page__bd{
+    padding-bottom: 0;
+}
+.weui-tab__content{
+    padding-top: 60px;
+    text-align: center;
+}
+.my_tab{
+  position: absolute;
+  width: 100%;
+  height: 600rpx;
+  bottom: 0;
+}
+.my_tabcontent{
+  padding-top: 20rpx;
+}
+
+.my_title{
+  position: absolute;
+  width: 10em;
+  top: 470rpx;
+  left:50%;
+  margin-left: -5em;
+  text-align: center;
+}
+.my_top{
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.my_number{
+  position: absolute;
+  top:340rpx; 
+  z-index: 1;
+  font-size: 60rpx;
+  font-family: 'Arial Black', Gadget, sans-serif;
+  color: white;
+}
+.my_num1{
+    left: 225rpx;
+}
+.my_num2{
+  left: 315rpx;
+}
+.my_num3{
+  left: 405rpx;
+}
+.my_num4{
+  left: 495rpx;
+}
+.avatar{
+  position: absolute;
+  width:750rpx;
+  height:450rpx;
+  margin-top: 0rpx;
+  }
