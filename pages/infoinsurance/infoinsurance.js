@@ -1,5 +1,5 @@
 var sliderWidth = 96; // 需要设置slider的宽度，用于计算中间位置
-
+const app = getApp()
 Page({
   data: {
     tabs: ["有商业保单", "无商业保单"],
@@ -109,5 +109,29 @@ Page({
       success: function (res) {
       }
     });
+  },
+  onBtnClick: function (e) {
+    switch (this.data.activeIndex) {
+      case 0:
+        if (this.data.index1 < 0) {
+          this.openConfirm()
+        } else {
+          this.navigateToNext()
+        }
+        break
+      default:
+       this.navigateToNext()
+        break
+    }
+  },
+
+  navigateToNext: function(){
+    var t = app.globalData.sets
+    t.hascommerceWarranty = this.tabs[this.data.activeIndex]
+    t.commerceWarrantyPaytime = this.data.index1 >= 0 ? this.data.array1[this.data.index1] : ""
+    t.total = this.data.total
+    wx.navigateTo({
+      url: '../infouser/infouser?total=' + this.data.total,
+    })
   }
 });

@@ -1,12 +1,15 @@
 {
   "pages": [
+    "pages/result/result",
+    "pages/infouser/infouser",
     "pages/index/index",
     "pages/infoprofession/infoprofession",
     "pages/infohouse/infohouse",
     "pages/infocar/infocar",
     "pages/infoinsurance/infoinsurance",
+    "pages/logs/logs",
+    "pages/agreement/agreement"
    
-    "pages/logs/logs"
   ],
   "window": {
     "backgroundTextStyle": "light",

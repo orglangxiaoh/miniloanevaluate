@@ -1,5 +1,5 @@
 var sliderWidth = 96; // 需要设置slider的宽度，用于计算中间位置
-
+const app = getApp()
 Page({
   data: {
     tabs: ["上班族", "企业主", "个体户", "其他"],
@@ -156,6 +156,12 @@ Page({
     })
   },
   navagateToHoseInfo: function(){
+    var t = app.globalData.sets
+    t.profession = this.data.tabs[this.data.activeIndex]
+    t.income = this.data.index1 >= 0 ? this.data.array1[this.data.index1] : ""
+    t.socialSecurity = this.data.index2 >= 0 ? this.data.array2[this.data.index2] : ""
+    t.accumulationFund = this.data.index3 >= 0 ? this.data.array3[this.data.index3] : ""
+    t.total = this.data.total
     wx.navigateTo({
       url: '../infohouse/infohouse?total='+this.data.total
     })

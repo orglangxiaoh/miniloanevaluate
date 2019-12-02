@@ -1,5 +1,5 @@
 var sliderWidth = 96; // 需要设置slider的宽度，用于计算中间位置
-
+const app = getApp()
 Page({
   data: {
     tabs: ["有", "无"],
@@ -153,16 +153,24 @@ Page({
         || (this.data.index2 === 1 && this.data.monthlyPay === "") || (this.data.index2 === 2 && this.data.worthTotal === "")) {
           this.openConfirm()
         } else {
-          wx.navigateTo({
-            url: '../infoinsurance/infoinsurance?total='+this.data.total,
-          })
+         this.navigateToNext()
         }
         break
       default:
-        wx.navigateTo({
-          url: '../infoinsurance/infoinsurance?total='+this.data.total,
-        })
+       this.navigateToNext()
         break
     }
+  },
+  navigateToNext: function(){ 
+    var t = app.globalData.sets
+    t.hasCar = this.data.tabs[this.data.activeIndex] 
+    t.carType = this.data.index1 >= 0 ? this.data.array1[this.data.index1] : ""
+    t.carMonthly = this.data.index1 == 0 ? this.data.monthlyPay * 1 : 0
+    t.carWorth = this.data.index1 == 1 ? this.data.worthTotal * 1 : 0
+   
+    t.total = this.data.total
+    wx.navigateTo({
+      url: '../infoinsurance/infoinsurance?total=' + this.data.total,
+    })
   }
 });

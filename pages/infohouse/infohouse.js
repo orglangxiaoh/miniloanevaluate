@@ -1,5 +1,5 @@
 var sliderWidth = 96; // 需要设置slider的宽度，用于计算中间位置
-
+const app = getApp()
 Page({
   data: {
     tabs: ["有", "无"],
@@ -100,8 +100,8 @@ Page({
       sliderOffset: e.currentTarget.offsetLeft,
       activeIndex: e.currentTarget.id
     });
-    clearInputs();
-    calAndShowMoney();
+    this.clearInputs();
+    this.calAndShowMoney();
   },
   bindArray1Change: function (e) {
     this.setData({
@@ -163,16 +163,25 @@ Page({
         || (this.data.index2 === 1 && this.data.worthTotal === "")){
           this.openConfirm()
         }else{
-          wx.navigateTo({
-            url: '../infocar/infocar?total='+this.data.total,
-          })
+          this.navigateToNext()
         }
       break
       default:
-        wx.navigateTo({
-          url: '../infocar/infocar?total='+this.data.total,
-        })
+        this.navigateToNext()
       break
     }
+  },
+  navigateToNext: function(){
+    var t = app.globalData.sets
+    t.hasHouse = this.data.tabs[this.data.activeIndex]
+    t.houseCredential = this.data.index1 >= 0 ? this.data.array1[this.data.index1] : ""
+    t.houseType = this.data.index2 >= 0 ? this.data.array2[this.data.index2] : ""
+    t.houseMonthly = t.houseType == 0 ? this.data.monthlyPay * 1 : 0
+    t.houseWorth = t.houseType == 1 ? this.data.worthTotal * 1 : 0
+    t.total = this.data.total
+    wx.navigateTo({
+      url: '../infocar/infocar?total=' + this.data.total,
+    })
+    
   }
 });
