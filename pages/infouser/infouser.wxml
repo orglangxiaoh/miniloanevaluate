@@ -39,7 +39,7 @@
         <view class="weui-label">验证码</view>
       </view>
       <view class="weui-cell__bd">
-        <input class="weui-input" type="number" value="{{validateCode}}" placeholder="数字验证码" />
+        <input class="weui-input" type="number" bindinput="bindValidateInput" value="{{validateCode}}" placeholder="数字验证码" />
       </view>
     </view>
 

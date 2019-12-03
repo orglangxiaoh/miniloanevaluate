@@ -1,6 +1,7 @@
 //app.js
 App({   
   globalData: {
-    sets: {}
+    sets: {},
+    url:""
   }
 })

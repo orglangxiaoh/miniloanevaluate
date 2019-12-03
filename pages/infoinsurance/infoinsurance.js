@@ -127,7 +127,7 @@ Page({
 
   navigateToNext: function(){
     var t = app.globalData.sets
-    t.hascommerceWarranty = this.tabs[this.data.activeIndex]
+    t.hascommerceWarranty = this.data.tabs[this.data.activeIndex]
     t.commerceWarrantyPaytime = this.data.index1 >= 0 ? this.data.array1[this.data.index1] : ""
     t.total = this.data.total
     wx.navigateTo({
