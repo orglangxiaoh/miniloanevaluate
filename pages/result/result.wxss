@@ -1,31 +1,26 @@
 /**index.wxss**/
-     .title{
-      margin-top: 72rpx;
-      width: 750rpx;
-      height: 38rpx;
-      display:flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center; 
-      font-size:38rpx;
-      font-weight: hold;
-      color:black;
-      
-
+.container{
+    position:relative;
     }
-    .box{
-      margin-top: 36rpx;
-      width: 750rpx;
-      height: 38rpx;
-      display:flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center; 
-      font-size:32rpx;
-      font-weight: hold;
-      color:black;
-      padding-top: 100rpx;
-      padding-left: 50rpx;
-      padding-right: 30rpx;
+    .avatar{
+      position: absolute;
+        width:750rpx;
+        height:1205rpx;
+        top: 0rpx;
+    
+    
     }
   
+    .box{
+      position: absolute;
+      top:450rpx;
+      color: green;
+      font-size: 50rpx;
+      font-weight: bold;
+      text-align: center;
+    }
+    .txtmoney{
+      color:green;
+      font-size: 60rpx;
+      text-align: center;
+    }

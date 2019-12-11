@@ -35,7 +35,7 @@ page,
 }
 .my_number{
   position: absolute;
-  top:340rpx; 
+  top:320rpx; 
   z-index: 1;
   font-size: 60rpx;
   font-family: 'Arial Black', Gadget, sans-serif;
