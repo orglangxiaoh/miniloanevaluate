@@ -1,6 +1,7 @@
 <view class="page">
   <image class="topimg" src="../../img/0203userinfo.png"></image>
   
+  <view class="my_content">
   <view class="weui-cells weui-cells_after-title">
     <view class="weui-cell ">
       <view class="weui-cell__hd">
@@ -57,5 +58,6 @@
   </view>
   <view class="page__bd page__bd_spacing">
     <button class="weui-btn mybtn" type="default" bindtap="bindSubmit">提交</button>
+  </view>
   </view>
 </view>

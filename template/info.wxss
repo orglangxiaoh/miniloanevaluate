@@ -12,7 +12,8 @@ page,
 }
 .my_tab{
   position: absolute;
-  width: 100%;
+  margin-left: 20rpx;
+  width:710rpx;
   height: 600rpx;
   bottom: 0;
 }
@@ -35,23 +36,54 @@ page,
 }
 .my_number{
   position: absolute;
-  top:320rpx; 
+  top:280rpx; 
   z-index: 1;
-  font-size: 60rpx;
+  font-size: 70rpx;
   font-family: 'Arial Black', Gadget, sans-serif;
   color: white;
 }
 .unit-num{
-    left: 225rpx;
+  left: 160rpx;
+   width: 60rpx;
+  height: 80rpx;
+  background-color: rgb(253, 216, 128);
+  text-align: center;
+  padding: 5rpx;
+  border-radius: 10rpx;
 }
 .unit-num2{
-  left: 315rpx;
+  left: 250rpx;
+  width: 60rpx;
+  height: 80rpx;
+  background-color: rgb(253, 216, 128);
+  text-align: center;
+  padding: 5rpx;
+  border-radius: 10rpx;
 }
 .unit-num3{
-  left: 405rpx;
+  left: 340rpx;
+   width: 60rpx;
+  height: 80rpx;
+  background-color: rgb(253, 216, 128);
+  text-align: center;
+  padding: 5rpx;
+  border-radius: 10rpx;
 }
 .unit-num4{
-  left: 495rpx;
+  left: 430rpx;
+   width: 60rpx;
+  height: 80rpx;
+  background-color: rgb(253, 216, 128);
+  text-align: center;
+  padding: 5rpx;
+  border-radius: 10rpx;
+}
+.unit{
+  left: 520rpx;
+  width: 60rpx;
+  height: 80rpx;
+  text-align: center;
+  padding: 5rpx;
 }
 .avatar{
   position: absolute;
@@ -65,9 +97,6 @@ page,
     padding-left: 0rpx;
   }
 
-page{
-    background-color: #FFFFFF;
-}
 .weui-demo-dialog{
   visibility:hidden;
   opacity:0;

@@ -13,8 +13,9 @@
   
     .box{
       position: absolute;
-      top:680rpx;
+      top:900rpx;
     }
     .btn{
-      width: 750rpx;
+      width: 400rpx;
     }
+  

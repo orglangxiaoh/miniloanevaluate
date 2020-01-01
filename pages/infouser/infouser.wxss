@@ -5,3 +5,8 @@
   width:750rpx;
   height:450rpx;
 }
+
+.my_content{
+  margin-left: 20rpx;
+  width:710rpx;
+}

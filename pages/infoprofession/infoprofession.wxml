@@ -6,9 +6,9 @@
     <input class="my_number unit-num2" value="{{value3}}"></input>
     <input class="my_number unit-num3" value="{{value4}}"></input>
     <input class="my_number unit-num4" value="{{value5}}"></input>
+    <input class="my_number unit" value="万"></input>
   </view>
   <view class="page__bd">
-
     <view class="weui-tab my_tab">
       <view class="weui-navbar">
         <block wx:for="{{tabs}}" wx:key="*this">
@@ -133,7 +133,6 @@
         </view>
       </view>
     </view>
-
     <view class="weui-demo-dialog {{istrue ? 'weui-demo-dialog_show' : ''}}">
       <view class="weui-mask" bindtap="closeDialog"></view>
       <view class="weui-dialog__wrp" bindtap="closeDialog">

@@ -6,6 +6,7 @@
     <input class="my_number unit-num2" value="{{value3}}"></input>
     <input class="my_number unit-num3" value="{{value4}}"></input>
     <input class="my_number unit-num4" value="{{value5}}"></input>
+     <input class="my_number unit" value="万"></input>
   </view>
   <view class="page__bd">
 
