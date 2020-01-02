@@ -1,21 +1,27 @@
 /**index.wxss**/
-.container{
-    position:relative;
-    }
-    .avatar{
-      position: absolute;
-        width:750rpx;
-        height:1205rpx;
-        top: 0rpx;
-    
-    
-    }
-  
+ .avatar{
+      width:750rpx;
+      height:1200rpx;
+      top: 0rpx;  
+  }
+.top{
+  position: relative;
+}
     .box{
-      position: absolute;
-      top:900rpx;
-    }
-    .btn{
+      position: absolute; 
       width: 400rpx;
+      top: 850rpx;
+      left: 50%;
+      margin-left: -200rpx;     
     }
+
+.btn{
+ background-color: #07c160;
+ color: white;
+}
+   .bgimg{   
+    height: 1200rpx;
+    width: 710rpx;
+  }
+
   

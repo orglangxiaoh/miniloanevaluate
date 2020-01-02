@@ -8,8 +8,8 @@
     <input class="my_number unit-num4" value="{{value5}}"></input>
     <input class="my_number unit" value="万"></input>
   </view>
-  <view class="page__bd">
-    <view class="weui-tab my_tab">
+  <view class="page__bd my_tab">
+    <view class="weui-tab ">
       <view class="weui-navbar">
         <block wx:for="{{tabs}}" wx:key="*this">
           <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
@@ -150,4 +150,5 @@
     </view>
 
   </view>
+  
 </view>

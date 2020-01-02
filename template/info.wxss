@@ -13,9 +13,11 @@ page,
 .my_tab{
   position: absolute;
   margin-left: 20rpx;
+  top:600rpx;
   width:710rpx;
   height: 600rpx;
   bottom: 0;
+  background-color: white;
 }
 .my_tabcontent{
   padding-top: 20rpx;
@@ -23,11 +25,13 @@ page,
 
 .my_title{
   position: absolute;
-  width: 10em;
-  top: 470rpx;
-  left:50%;
-  margin-left: -5em;
+  top: 420rpx;
   text-align: center;
+  background-color: white;
+  width: 710rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin-left: 20rpx;
 }
 .my_top{
   position: relative;
@@ -105,4 +109,7 @@ page,
 .weui-demo-dialog_show{
   visibility:visible;
   opacity:1;
+}
+page{
+  background-color: rgb(251, 191, 46)
 }

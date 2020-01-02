@@ -1,63 +1,63 @@
 <view class="page">
   <image class="topimg" src="../../img/0203userinfo.png"></image>
-  
+
   <view class="my_content">
-  <view class="weui-cells weui-cells_after-title">
-    <view class="weui-cell ">
-      <view class="weui-cell__hd">
-        <view class="weui-label">姓名:</view>
-      </view>
-      <view class="weui-cell__bd">
-        <input class="weui-input" value="{{name}}" bindinput="bindNameInput" placeholder="请输入您的姓名" />
-      </view>
-    </view>
-    <view class="weui-cell weui-cell_select">
-      <view class="weui-cell__hd weui-cell__hd_in-select-after">
-        <view class="weui-label">所在城市：</view>
-      </view>
-      <view class="weui-cell__bd">
-        <picker bindchange="bindArray1Change" value="{{index1}}" range="{{array1}}">
-          <view class="weui-select weui-select_in-select-after">{{array1[index1]}}</view>
-        </picker>
-      </view>
-    </view>
-    <view class="weui-cell  weui-cell_vcode">
-      <view class="weui-cell__hd">
-        <view class="weui-label">电话</view>
-      </view>
-      <view class="weui-cell__bd">
-        <input class="weui-input" type="number" bindinput="bindPhoneInput" value="{{phoneNum}}" placeholder="联系电话" />
-      </view>
-      <view class="weui-cell__ft">
-        <view class="weui-vcode-btn" catchtap="bindGetValidateCode">{{word}}</view>
-      </view>
-    </view>
-
-    <view class="weui-cell">
-      <view class="weui-cell__hd">
-        <view class="weui-label">验证码</view>
-      </view>
-      <view class="weui-cell__bd">
-        <input class="weui-input" type="number" bindinput="bindValidateInput" value="{{validateCode}}" placeholder="数字验证码" />
-      </view>
-    </view>
-
-    <checkbox-group bindchange="bindAgreeChange">
-      <label class="weui-agree" for="weuiAgree">
-        <view class="weui-agree__text">
-          <checkbox class="weui-agree__checkbox" id="weuiAgree" value="agree" checked="{{isAgree}}" />
-          <view class="weui-agree__checkbox-icon">
-            <icon class="weui-agree__checkbox-icon-check" type="success_no_circle" size="9" wx:if="{{isAgree}}"></icon>
-          </view>
-          阅读并同意
-          <navigator catchtap="bindAgreeClick" id="nav" url="../agreement/agreement" class="weui-agree__link">《相关条款》</navigator>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell ">
+        <view class="weui-cell__hd">
+          <view class="weui-label">姓名:</view>
         </view>
-      </label>
-    </checkbox-group>
+        <view class="weui-cell__bd">
+          <input class="weui-input" value="{{name}}" bindinput="bindNameInput" placeholder="请输入您的姓名" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_select">
+        <view class="weui-cell__hd weui-cell__hd_in-select-after">
+          <view class="weui-label">所在城市：</view>
+        </view>
+        <view class="weui-cell__bd">
+          <picker bindchange="bindArray1Change" value="{{index1}}" range="{{array1}}">
+            <view class="weui-select weui-select_in-select-after">{{array1[index1]}}</view>
+          </picker>
+        </view>
+      </view>
+      <view class="weui-cell  weui-cell_vcode">
+        <view class="weui-cell__hd">
+          <view class="weui-label">电话</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" type="number" bindinput="bindPhoneInput" value="{{phoneNum}}" placeholder="联系电话" />
+        </view>
+        <view class="weui-cell__ft">
+          <view class="weui-vcode-btn" catchtap="bindGetValidateCode">{{word}}</view>
+        </view>
+      </view>
 
-  </view>
-  <view class="page__bd page__bd_spacing">
-    <button class="weui-btn mybtn" type="default" bindtap="bindSubmit">提交</button>
-  </view>
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <view class="weui-label">验证码</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" type="number" bindinput="bindValidateInput" value="{{validateCode}}" placeholder="数字验证码" />
+        </view>
+      </view>
+
+      <checkbox-group bindchange="bindAgreeChange">
+        <label class="weui-agree" for="weuiAgree">
+          <view class="weui-agree__text">
+            <checkbox class="weui-agree__checkbox" id="weuiAgree" value="agree" checked="{{isAgree}}" />
+            <view class="weui-agree__checkbox-icon">
+              <icon class="weui-agree__checkbox-icon-check" type="success_no_circle" size="9" wx:if="{{isAgree}}"></icon>
+            </view>
+            阅读并同意
+            <navigator catchtap="bindAgreeClick" id="nav" url="../agreement/agreement" class="weui-agree__link">《相关条款》</navigator>
+          </view>
+        </label>
+      </checkbox-group>
+
+    </view>
+    <view class="page__bd page__bd_spacing">
+      <button class="weui-btn mybtn" type="default" bindtap="bindSubmit">提交</button>
+    </view>
   </view>
 </view>

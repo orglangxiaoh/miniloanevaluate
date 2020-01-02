@@ -1,10 +1,13 @@
-<view class="container">
-    <image class="avatar" src="/img/0201home.png"></image>
-    
-    <view class="box">
-    <button type="primary" class="btn" bindtap="clickTest">测一测</button>
-    
+<view class="page">
+  <view class="page__hd top">
+    <image class="avatar" src="/img/0201home.png "></image>
+    <view class="box ">
+        <button type="primary " class="btn" bindtap="clickTest">测一测</button>
     </view>
-    <view>
-    </view>
+  </view>
+ <view class="page__hd"> 
+  <view>
+      <image class="bgimg " src="../../img/0106backgroung.png "></image>
+  </view>
+ </view>
 </view>

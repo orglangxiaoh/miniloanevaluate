@@ -10,3 +10,6 @@
   margin-left: 20rpx;
   width:710rpx;
 }
+page{
+  background-color: rgb(255, 197, 22)
+}
