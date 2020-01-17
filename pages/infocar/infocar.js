@@ -77,6 +77,7 @@ Page({
       monthlyPay: ""
     })
   },
+ 
   onLoad: function (options) {
     this.setData({
       initTotal: options.total
@@ -148,9 +149,10 @@ Page({
   },
   onBtnClick: function (e) {
     switch (this.data.activeIndex) {
-      case 0:
-        if (this.data.index1 < 0 || this.data.index2 < 0 
-        || (this.data.index2 === 1 && this.data.monthlyPay === "") || (this.data.index2 === 2 && this.data.worthTotal === "")) {
+      case 0:      
+        if (this.data.index1 < 0 
+          || (this.data.index1 == 0 && this.data.monthlyPay == "") 
+          || (this.data.index1 == 1 && this.data.worthTotal == "")) {
           this.openConfirm()
         } else {
          this.navigateToNext()

@@ -21,6 +21,9 @@ page,
 }
 .my_tabcontent{
   padding-top: 20rpx;
+  text-align: left;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
 }
 
 .my_title{

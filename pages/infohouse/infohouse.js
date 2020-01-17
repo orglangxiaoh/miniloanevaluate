@@ -2,6 +2,8 @@ var sliderWidth = 96; // 需要设置slider的宽度，用于计算中间位置
 const app = getApp()
 Page({
   data: {
+    isAgree: false,
+
     tabs: ["有", "无"],
     activeIndex: 0,
     sliderOffset: 0,
@@ -23,6 +25,11 @@ Page({
     value5: 0,  //个位   
 
     showDialog: false
+  },
+  bindAgreeChange: function (e) {
+    this.setData({
+      isAgree: !!e.detail.value.length
+    });
   },
   /*计算可贷款总金额 */
   calTotalMoney: function () {
@@ -156,11 +163,12 @@ Page({
     });
   },
   onBtnClick: function(e){
+    console.log(this.data.activeIndex)
     switch(this.data.activeIndex){
-      case 0:
+      case 0:       
         if (this.data.index1 < 0 || this.data.index2 < 0 
-        || (this.data.index2 === 0 && this.data.monthlyPay === "") 
-        || (this.data.index2 === 1 && this.data.worthTotal === "")){
+        || (this.data.index2 == 0 && this.data.monthlyPay == "") 
+        || (this.data.index2 == 1 && this.data.worthTotal == "")){
           this.openConfirm()
         }else{
           this.navigateToNext()
@@ -176,8 +184,8 @@ Page({
     t.hasHouse = this.data.tabs[this.data.activeIndex]
     t.houseCredential = this.data.index1 >= 0 ? this.data.array1[this.data.index1] : ""
     t.houseType = this.data.index2 >= 0 ? this.data.array2[this.data.index2] : ""
-    t.houseMonthly = t.houseType == 0 ? this.data.monthlyPay * 1 : 0
-    t.houseWorth = t.houseType == 1 ? this.data.worthTotal * 1 : 0
+    t.houseMonthly = this.data.index2 == 0 ? this.data.monthlyPay * 1 : 0
+    t.houseWorth = this.data.index2 == 1 ? this.data.worthTotal * 1 : 0
     t.total = this.data.total
     wx.navigateTo({
       url: '../infocar/infocar?total=' + this.data.total,

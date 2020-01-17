@@ -1,7 +1,7 @@
 /**index.wxss**/
  .avatar{
       width:750rpx;
-      height:1200rpx;
+      height:1448rpx;
       top: 0rpx;  
   }
 .top{
@@ -10,7 +10,7 @@
     .box{
       position: absolute; 
       width: 400rpx;
-      top: 850rpx;
+      top: 1050rpx;
       left: 50%;
       margin-left: -200rpx;     
     }
@@ -22,6 +22,9 @@
    .bgimg{   
     height: 1200rpx;
     width: 710rpx;
+  }
+  page{
+    background-color: #f5eef6;
   }
 
   

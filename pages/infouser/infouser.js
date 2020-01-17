@@ -53,6 +53,7 @@ Page({
   },
   bindGetValidateCode: function () {
     if (!this.data.flag) return;
+    console.log("发送短信");
     if ("" === this.data.name || this.data.index1 < 0 || "" === this.data.phoneNum) wx.showToast({
       title: "请完善信息",
       icon: "none",
@@ -64,7 +65,7 @@ Page({
         flag: false,
         word: t.data.countDownNum + "s"
       })
-      this.sendValidateCode()
+      this.sendValidateCode(t, this.data.phoneNum)
     } 
     else wx.showToast({
       title: "请填写正确的手机号码",
@@ -72,23 +73,33 @@ Page({
       duration: 2e3
     });
   },
-  sendValidateCode:function(phoneNumber){
+  sendValidateCode:function(t,phoneNumber){
+    console.log("请求发送短信接口");
     wx.request({
-      url: app.globalData.url + "Home/SendMessage",
+      url: app.globalData.url + "/Home/SendMessage",
       data: {
         phone: phoneNumber
-      },     
+      },    
+      header: {
+        'content-type': 'application/x-www-form-urlencoded' // 默认值
+      }, 
       method: "get",
       success: function (e) {
-        true === e.data.IsSuccess ? wx.showToast({
-          title: e.data.message,
-          icon: "success",
-          duration: 2e3
-        }) : wx.showToast({
-          title: e.data.message,
-          icon: "none",
-          duration: 2e3
-        }), t.countDown();
+        if(true === e.data.isSuccess) {
+          wx.showToast({
+            title: e.data.message,
+            icon: "success",
+            duration: 2e3
+          })
+        }
+        else{
+          wx.showToast({
+            title: e.data.message,
+            icon: "none",
+            duration: 2e3
+          })
+        } 
+        t.countDown()
       },
       fail: function (t) {
         wx.showModal({
@@ -116,9 +127,17 @@ Page({
     });
   },
   bindSubmit: function(){
+    console.log(this.data.isAgree)
     if ("" === this.data.name || this.data.index1 < 0 || "" === this.data.phoneNum || this.data.validateCode === ""){
       wx.showToast({
         title: "请完善信息",
+        icon: "none",
+        duration: 2e3
+      })
+    }
+    else if(!this.data.isAgree){
+      wx.showToast({
+        title: "同意《相关条款》后才能提交结果",
         icon: "none",
         duration: 2e3
       })
@@ -135,9 +154,11 @@ Page({
         data: t,
         method: "post",
         success: function (e) {
-          if(true === e.data.IsSuccess){
+          console.log(e.data)
+          if(true === e.data.isSuccess){
+            var money = Math.ceil(e.data.total)
             wx.navigateTo({
-              url: '../result/result?total='+e.data.Total,
+              url: '../result/result?total='+ money,
             })
           }else{
             wx.showToast({

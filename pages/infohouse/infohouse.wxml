@@ -65,7 +65,7 @@
               <view class="weui-label">无房产</view>
             </view>       
           </view>
-          <button class="weui-btn" catchtap="onBtnClick" type="default">下一步</button>
+          <button class="weui-btn myBtn" catchtap="onBtnClick" type="default">下一步</button>
         </view>
       </view>
     </view>

@@ -13,7 +13,7 @@
       </view>
       <view class="weui-cell weui-cell_select">
         <view class="weui-cell__hd weui-cell__hd_in-select-after">
-          <view class="weui-label">所在城市：</view>
+          <view class="weui-label mycity_label">所在城市：</view>
         </view>
         <view class="weui-cell__bd">
           <picker bindchange="bindArray1Change" value="{{index1}}" range="{{array1}}">
@@ -23,7 +23,7 @@
       </view>
       <view class="weui-cell  weui-cell_vcode">
         <view class="weui-cell__hd">
-          <view class="weui-label">电话</view>
+          <view class="weui-label">电话:</view>
         </view>
         <view class="weui-cell__bd">
           <input class="weui-input" type="number" bindinput="bindPhoneInput" value="{{phoneNum}}" placeholder="联系电话" />
@@ -35,7 +35,7 @@
 
       <view class="weui-cell">
         <view class="weui-cell__hd">
-          <view class="weui-label">验证码</view>
+          <view class="weui-label">验证码:</view>
         </view>
         <view class="weui-cell__bd">
           <input class="weui-input" type="number" bindinput="bindValidateInput" value="{{validateCode}}" placeholder="数字验证码" />

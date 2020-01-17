@@ -9,7 +9,11 @@
 .my_content{
   margin-left: 20rpx;
   width:710rpx;
+  text-align: left;
 }
 page{
   background-color: rgb(255, 197, 22)
+}
+.mycity_label{
+  margin-left: 30rpx;
 }

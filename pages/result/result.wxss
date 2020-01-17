@@ -24,3 +24,6 @@
       font-size: 60rpx;
       text-align: center;
     }
+    page{
+      background-color: rgb(254, 198, 0)
+    }

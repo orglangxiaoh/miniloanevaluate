@@ -1,10 +1,8 @@
 {
   "pages": [
-      "pages/index/index",
-      
-   "pages/result/result",
+    "pages/index/index",
     "pages/infouser/infouser",
-  
+    "pages/result/result",
     "pages/infoprofession/infoprofession",
     "pages/infohouse/infohouse",
     "pages/infocar/infocar",
@@ -15,9 +13,8 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "测个额度",
     "navigationBarTextStyle": "black"
   },
- 
   "sitemapLocation": "sitemap.json"
 }

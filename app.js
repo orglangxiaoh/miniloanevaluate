@@ -2,6 +2,8 @@
 App({   
   globalData: {
     sets: {},
-    url:""
+    url:"https://www.gxph.org.cn",
+    //url:"Http://10.1.3.222:8096",
+    isAgree: false
   }
 })

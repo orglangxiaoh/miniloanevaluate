@@ -10,5 +10,16 @@ Page({
     wx.navigateTo({
       url: '../infoprofession/infoprofession',
     })
+  },
+  onLoad: function(){
+    wx.getSystemInfo({
+      success: function (res) {
+        let clientHeight = res.windowHeight;
+        let clientWidth = res.windowWidth;
+        let changeHeight = 750 / clientWidth;
+        let height = clientHeight * changeHeight;
+        console.log(height)
+      }
+    })
   }
 })
