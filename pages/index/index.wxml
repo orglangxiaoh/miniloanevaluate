@@ -1,8 +1,22 @@
 <view class="page">
-  <view class="page__hd top">
-    <image class="avatar" src="/img/0201home.png"></image>
-    <view class="box ">
-        <button type="primary " class="btn" bindtap="clickTest">测一测</button>
+  <view class="page__hd">
+    <image class="top" src="/img/0201home.png"></image>
+    <view class="btnbox">
+      <button class="btn" bindtap="clickTest">测一测</button>
+    </view>
+    <view class="weui-flex">
+      <view class="weui-flex__item">
+        <view class="placeholder">
+          <image class="choose" src="/img/choose.png"></image>  高效放款</view>
+      </view>
+      <view class="weui-flex__item">
+        <view class="placeholder">
+          <image class="choose" src="/img/choose.png"></image>  专业评估</view>
+      </view>
+      <view class="weui-flex__item">
+        <view class="placeholder">
+          <image class="choose" src="/img/choose.png"></image>  独立后台</view>
+      </view>
     </view>
   </view>
 </view>

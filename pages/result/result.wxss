@@ -1,29 +1,117 @@
 /**index.wxss**/
-.container{
-    position:relative;
-    }
-    .avatar{
-      position: absolute;
-        width:750rpx;
-        height:1205rpx;
-        top: 0rpx;
-    
-    
-    }
-  
-    .box{
-      position: absolute;
-      top:450rpx;
-      color: green;
-      font-size: 50rpx;
-      font-weight: bold;
-      text-align: center;
-    }
-    .txtmoney{
-      color:green;
-      font-size: 60rpx;
-      text-align: center;
-    }
-    page{
-      background-color: rgb(254, 198, 0)
-    }
+
+.avatar {
+  width: 750rpx;
+  height: 880rpx;
+}
+
+.titlemoney {
+  position: absolute;
+  font-size: 0.9em;
+  text-align: center;
+  left: 50%;
+  top: 470rpx;
+  color: white;
+  margin-left: -90rpx;
+}
+
+.nummoney {
+  position: absolute;
+  font-size: 1.8em;
+  left: 50%;
+  margin-left: -35rpx;
+  top: 520rpx;
+  color: white;
+}
+
+page {
+  background-color: rgb(222, 41, 16);
+}
+
+.box {
+  width: 650rpx;
+  margin-left: 50rpx;
+  border-radius: 20rpx;
+}
+
+.cell_box {
+  border: 1px solid rgb(230, 95, 76);
+  border-radius: 10rpx;
+  font-size: 0.6em;
+  margin-left: 20rpx;
+  padding: 5rpx 5rpx 5rpx 5rpx;
+  color: rgb(230, 95, 76);
+}
+
+.cellTtext {
+  color: rgb(153, 153, 153);
+  font-size: 0.7em;
+  padding-top: 0rpx;
+}
+
+.weui-cell:before {
+  border-top: none;
+}
+
+#mycell:before {
+  border-bottom: 2rpx solid rgb(238, 238, 238);
+  width: 580rpx;
+}
+
+#mycell {
+  padding-bottom: 10rpx;
+}
+
+.subtext {
+  color: rgb(153, 153, 153);
+  font-size: 0.7em;
+  padding-top: 0rpx;
+}
+
+.btn {
+  background-color: rgb(230, 95, 76);
+  color: white;
+  border-radius: 45rpx;
+  height: 90rpx;
+}
+
+.my_footerarea {
+  margin-top: 50rpx;
+  margin-bottom: 50rpx;
+}
+
+.footer {
+  font-size: 1em;
+  text-align: center;
+  line-height: 2em;
+  height: 2em;
+  color: white;
+}
+
+.reward-title {
+  font-size: 1em;
+  text-align: center;
+  color: white;
+  line-height: 2em;
+  height: 2em;
+}
+
+.reward-title:before {
+  content: '';
+  width: 40px;
+  height: 1px;
+  border-bottom: 1px solid white;
+  display: inline-block;
+  margin-right: 14px;
+  margin-bottom: 13rpx;
+}
+
+.reward-title:after {
+  content: '';
+  width: 40px;
+  height: 1px;
+  border-bottom: 1px solid white;
+  display: inline-block;
+  margin-left: 14px;
+  margin-bottom: 13rpx;
+}

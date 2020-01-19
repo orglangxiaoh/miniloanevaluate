@@ -1,8 +1,110 @@
-<view class="container">
-    <image class="avatar" src="/img/0204last.png"></image>  
-    <view class="box">经测算,您的贷款额度为：
-    <view class="txtmoney">{{total}}万元</view>
+<view class="page">
+  <view class="page__bd">
+    <image class="avatar" src="/img/0204last.jpg"></image>
+    <view class="titlemoney">贷款额度()万</view>
+    <view class="nummoney">{{total}}</view>
+  </view>
+  <view class="page__bd" bindtap="showInfo">
+    <view class="weui-cells box">
+      <view class="weui-cell">
+        <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+          <image src='{{img1}}' style="width: 43px; height: 43px; display: block;" />
+        </view>
+        <view class="weui-cell__bd" style="font-size:0.9em;">
+          {{title1}}
+        </view>
+        <view class="weui-cell__ft cell_box">
+          <view>等额本息</view>
+        </view>
+        <view class="weui-cell__ft cell_box">
+          <view>先息后本</view>
+        </view>
+      </view>
+      <view class="weui-cell cellTtext">
+        <view class="weui-cell__bd">
+          {{remark1}}
+        </view>
+      </view>
+      <view class="weui-cell" id="mycell">
+        <view class="weui-cell__bd" style="color:rgb(250,183,42);">
+          {{rate1}}
+        </view>
+        <view class="weui-cell__ft" style="color:rgb(250,183,42);">
+          {{time1}}
+        </view>
+      </view>
+
+      <view class="weui-cell subtext">
+        <view class="weui-cell__bd" style="margin-left:80rpx;">
+          月利率
+        </view>
+        <view class="weui-cell__ft" style="margin-right:40rpx;">
+          {{subtitle1}}
+        </view>
+      </view>
+
+      <view class="weui-cell">
+      <view class="weui-cell__bd">
+      <button class="btn">立即贷款</button>
+      </view>
+      </view>
     </view>
-    <view>
+  </view>
+
+   <view class="page__bd" bindtap="showInfo">
+    <view class="weui-cells box">
+      <view class="weui-cell">
+        <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+          <image src='{{img2}}' style="width: 43px; height: 43px; display: block;" />
+        </view>
+        <view class="weui-cell__bd" style="font-size:0.9em;">
+          {{title2}}
+        </view>
+        <view class="weui-cell__ft cell_box">
+          <view>等额本息</view>
+        </view>
+        <view class="weui-cell__ft cell_box">
+          <view>先息后本</view>
+        </view>
+         <view class="weui-cell__ft cell_box">
+          <view>随借随还</view>
+        </view>
+      </view>
+      <view class="weui-cell cellTtext">
+        <view class="weui-cell__bd">
+          {{remark2}}
+        </view>
+      </view>
+      <view class="weui-cell" id="mycell">
+        <view class="weui-cell__bd" style="color:rgb(250,183,42);">
+          {{rate2}}
+        </view>
+        <view class="weui-cell__ft" style="color:rgb(250,183,42);">
+          {{time2}}
+        </view>
+      </view>
+
+      <view class="weui-cell subtext">
+        <view class="weui-cell__bd" style="margin-left:80rpx;">
+          月利率
+        </view>
+        <view class="weui-cell__ft" style="margin-right:30rpx;">
+          {{subtitle2}}
+        </view>
+      </view>
+
+      <view class="weui-cell">
+      <view class="weui-cell__bd">
+      <button class="btn">立即贷款</button>
+      </view>
+      </view>
+    </view>
+  </view>
+
+   <view class="page__bd my_footerarea">
+      <view class="reward-title">贷款方案推荐</view>
+      <view class="footer">以上方案仅供参考</view>
+      <view class="footer">服务电话：028-66221818</view> 
+      <view class="footer">地址：成都高新区国际金融中心四号楼</view> 
     </view>
 </view>

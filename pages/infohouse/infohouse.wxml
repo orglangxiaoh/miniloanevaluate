@@ -1,12 +1,33 @@
 <view class="page">
   <view class="page__hd my_top">
-    <image class="avatar" src="/img/top.jpg"></image>
-    <view class="weui-form__desc my_title">房产情况？</view>
+    <view class="weui-flex">
+      <view class="weui-flex__item">
+        <view class="placeholder">
+          <image class="textbox" src="/img/text.png" />
+        </view>
+      </view>
+    </view>
+    <view class="weui-flex">
+      <view class="weui-flex__item">
+        <view class="placeholder">
+          <image class="groupbox" src="/img/group.png"></image>
+        </view>
+      </view>
+    </view>
+    <view class="page__bd">
+   <view class="weui-form__desc my_title">房产情况？</view>
+  </view>
     <input class="my_number unit-num" value="{{value2}}"></input>
     <input class="my_number unit-num2" value="{{value3}}"></input>
     <input class="my_number unit-num3" value="{{value4}}"></input>
     <input class="my_number unit-num4" value="{{value5}}"></input>
      <input class="my_number unit" value="万"></input>
+
+       <image class="rect1" src="/img/cube1.png"/>
+      <image class="rect2" src="/img/cube2.png"/>
+      <image class="rect3" src="/img/cube3.png"/>
+      <image class="ellipse1" src="/img/ellipse1.png"/>
+      <image class="ellipse2" src="/img/ellipse2.png"/>
   </view>
   <view class="page__bd">
 
@@ -57,7 +78,7 @@
               <input type="number" class="weui-input" bindinput="bindMoneyPayInput" placeholder="请输入按揭房月供金额" value="{{monthlyPay}}"/>
             </view>
           </view>
-          <button class="weui-btn" catchtap="onBtnClick" type="default">下一步</button>
+          <button class="weui-btn" catchtap="onBtnClick">下一步</button>
         </view>
         <view class="weui-tab__content my_tabcontent" hidden="{{activeIndex != 1}}">
           <view class="weui-cell my_label">
@@ -65,7 +86,7 @@
               <view class="weui-label">无房产</view>
             </view>       
           </view>
-          <button class="weui-btn myBtn" catchtap="onBtnClick" type="default">下一步</button>
+          <button class="weui-btn myBtn" catchtap="onBtnClick">下一步</button>
         </view>
       </view>
     </view>
