@@ -48,7 +48,7 @@ setData1:function(){
       rate2: "0.28% ~ 1.19%",
       time1: "12 ~ 60期",
       time2: "3 ~ 36期",
-      subtitle1: "还款周期",
+      subtitle1: "可贷期限",
       subtitle2: "还款周期"
     })
   },
@@ -66,7 +66,7 @@ setData1:function(){
     this.setData({
       total: options.total
     })
-    if(this.data.total <= 15){
+    if(this.data.total > 15){
       this.setData1()
     }else{
       this.setData2()
